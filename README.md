@@ -7,3 +7,6 @@ This is a blank repository to train primosoft trainees
 Hello This is mahendra
 
 Good night
+
+ Hello this is my second change - khuddus
+
