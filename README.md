@@ -6,7 +6,9 @@ This is a blank repository to train primosoft trainees
 
  Hello this is my sixth change - khuddus
 
-Hello This is mahendra
+Hello This is mahen
+This is momin hello
+This is momins pull requst.again changed.
 
 Hello This is Divya
 
@@ -22,5 +24,6 @@ Good night
  Hello this is my fifth change - khuddus
 
  Hello this is my third change - khuddus
+
 
 
