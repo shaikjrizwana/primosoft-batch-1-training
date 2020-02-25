@@ -4,5 +4,23 @@ This is a blank repository to train primosoft trainees
 
  Hello my name is Abdul Khuddus
 
+ Hello this is my sixth change - khuddus
+
 Hello This is mahendra
+
 Hello This is Divya
+
+
+
+Hello This is my second commit -mahendra
+Good night
+
+ Hello this is my second change - khuddus
+ 
+ Hello this is my fourth change - khuddus
+ 
+ Hello this is my fifth change - khuddus
+
+ Hello this is my third change - khuddus
+
+
