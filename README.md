@@ -8,6 +8,8 @@ This is a blank repository to train primosoft trainees
 
 Hello This is mahendra
 
+
+Hello This is my second commit -mahendra
 Good night
 
  Hello this is my second change - khuddus
