@@ -13,7 +13,8 @@ Hello This is Divya
 
 
 Hello This is my second commit -mahendra
-Changes made
+
+Hello This is my second commit - Divya
 
  Hello this is my second change - khuddus
  
