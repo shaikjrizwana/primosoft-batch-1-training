@@ -1,4 +1,6 @@
 # primosoft-batch-1-training
+
+
 This is a blank repository to train primosoft trainees
  this is the first change 
 
@@ -25,5 +27,6 @@ Good night
 
  Hello this is my third change - khuddus
 
+Hey this is the third day training
 
 
