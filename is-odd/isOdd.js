@@ -1,5 +1,5 @@
 
-function isOdd(...args) {
+function isOdd(num) {
   return args;
 }
 
