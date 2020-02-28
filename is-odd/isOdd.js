@@ -4,7 +4,7 @@ function isOdd(n) {
       return false;
   else
       return true;
-
+}
 export {
   isOdd,
 };

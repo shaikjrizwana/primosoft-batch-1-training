@@ -1,9 +1,15 @@
 
 function isEven(n) {
-  if((n/10)===2|4|6|8|0)
-      return true;
+  var d;
+  d=Math.ceil(n/2);
+  if ((d* 2) == n)
+  {
+    return true;
+  }
   else
-      return false;
+  {
+    return false;
+  }
 }
 
 export {
