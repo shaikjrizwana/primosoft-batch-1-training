@@ -1,9 +1,15 @@
 
 function isOdd(n) {
-  if((n/10)===2|4|6|8|0)
-      return false;
+  var d;
+  d=Math.ceil(n/2);
+  if ((d* 2) == n)
+  {
+    return false;
+  }
   else
-      return true;
+  {
+    return true;
+  }
 }
 export {
   isOdd,
