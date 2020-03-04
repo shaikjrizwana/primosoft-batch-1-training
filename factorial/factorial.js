@@ -1,12 +1,9 @@
-
 function factorial(num) {
-  var fact = 1;
-  for (var i = 1; i <= num; i++) {
-    fact = fact * i;
+  var factorialOfNum = 1;
+  for (let i = 1; i <= num; i++) {
+    factorialOfNum = factorialOfNum * i;
   }
-  return fact;
+  return factorialOfNum;
 }
 
-export {
-  factorial,
-};
+export { factorial };
