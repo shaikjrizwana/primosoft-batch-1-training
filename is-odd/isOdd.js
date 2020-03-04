@@ -1,13 +1,6 @@
-
 function isOdd(num) {
-  var quot;
-  quot = Math.floor(num / 2);
-  if (quot * 2 == num) {
-    return false;
-  }
-  return true;
+  const quotient = Math.floor(num / 2);
+  return quotient * 2 !== num;
 }
 
-export {
-  isOdd,
-};
+export { isOdd };
