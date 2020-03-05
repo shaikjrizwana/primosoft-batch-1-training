@@ -1,6 +1,6 @@
 
-function dropElements(...args) {
-  return args;
+function dropElements(numbers,filterFun) {
+  return numbers.filter(filterFun);
 }
 
 export {
