@@ -1,13 +1,8 @@
 
 function chunkArrayInGroups(arr, size) {
-  const finalArray = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    if (i % size === 0) {
-      finalArray.push(arr.slice(i, i + size));
-    }
-  }
-
-  return finalArray;
+  const finalArraySize = Math.ceil(arr.length / size);
+  const emptyFinalArray = new Array(finalArraySize).fill('');
+  return emptyFinalArray.map((chunk, index) => arr.slice(index * size, (index + 1) * size));
 }
 
 export {
