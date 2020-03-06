@@ -1,5 +1,5 @@
-function dropElements(arr,func) {
-  return arr.filter(func);
+function dropElements(array,func) {
+  return array.filter(func);
 }
 
 export {
