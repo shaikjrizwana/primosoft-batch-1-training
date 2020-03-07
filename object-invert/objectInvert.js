@@ -1,6 +1,11 @@
 
-function objectInvert(...args) {
-  return args;
+function objectInvert(object) {
+  const finalObject = {};
+  for (const key in object) {
+    finalObject[object[key]] = key;
+  }
+
+  return finalObject;
 }
 
 export {
