@@ -1,9 +1,6 @@
 function objectValues(obj) {
-  const arr = [];
-  for (const i in obj) {
-    arr.push(obj[i]);
-  }
-  if (Array.isArray(arr)) {
+  const arr = Object.entries(obj).map(key_val => key_val[1]);
+  if (Array.isArray(arr)){
     return arr;
   }
 }
