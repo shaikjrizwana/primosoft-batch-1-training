@@ -1,9 +1,9 @@
 function mapObject(obj, fun) {
-  const newObj = {};
-  for (const key in obj) {
-    newObj[key] = fun(obj[key]);
-  }
-  return newObj;
+  return Object.keys(obj).reduce((acc, key) => {
+    acc[key] = fun(obj[key]);
+    return acc;
+  }, {});
 }
-
-export { mapObject };
+export {
+  mapObject,
+};
