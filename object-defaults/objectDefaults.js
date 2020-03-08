@@ -1,8 +1,10 @@
-
-function objectDefaults(obj, deafultObj) {
-  return Object.assign(deafultObj, obj);
+function objectDefaults(obj, defaultObj) {
+  return Object.keys(defaultObj).reduce((acc, key) => {
+    if (!(key in acc)) {
+      acc[key] = defaultObj[key];
+    }
+    return acc;
+  }, obj);
 }
 
-export {
-  objectDefaults,
-};
+export { objectDefaults };
