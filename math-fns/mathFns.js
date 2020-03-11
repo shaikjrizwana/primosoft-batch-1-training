@@ -1,8 +1,13 @@
-
-function mathFns(...args) {
-  return args;
+/* eslint-disable linebreak-style */
+function sqrt(number) {
+  return Math.sqrt(number);
+}
+function power(base, exponent) {
+  return Math.pow(base, exponent);
 }
 
-export {
-  mathFns,
-};
+function round(number) {
+  return Math.round(number);
+}
+
+export { sqrt, power, round };
