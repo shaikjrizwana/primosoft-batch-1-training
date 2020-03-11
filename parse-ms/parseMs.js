@@ -1,5 +1,7 @@
 function parseMs(seconds) {
   let totalMilliSeconds = seconds;
+  totalMilliSeconds =
+    totalMilliSeconds < 0 ? -totalMilliSeconds : totalMilliSeconds;
 
   const noOfDays = Math.floor(totalMilliSeconds / (24 * 3600 * 1000));
   totalMilliSeconds %= 24 * 3600 * 1000;
@@ -22,6 +24,13 @@ function parseMs(seconds) {
     seconds: noOfSeconds,
     milliseconds: noOfMilliSeconds
   };
+
+  if (seconds < 0) {
+    return Object.keys(result).reduce((acc, key) => {
+      acc[key] = -result[key];
+      return acc;
+    }, {});
+  }
 
   return result;
 }
