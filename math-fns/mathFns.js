@@ -7,6 +7,7 @@ function power(value, exponent) {
 function round(number) {
   return Math.round(number);
 }
+
 export {
   sqrt, power, round,
 };
