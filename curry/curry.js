@@ -1,9 +1,9 @@
-function curry(fn, ...args) {
-  return fn.length <= args.length
-    ? fn(...args)
-    : (...more) => curry(fn, ...args, ...more);
+function curry(fun, ...currentArguments) {
+  const requiredArguments = fun.length;
+  if (requiredArguments <= currentArguments.length) {
+    return fun(...currentArguments);
+  }
+  return (...futureArguments) => curry(fun, ...currentArguments, ...futureArguments);
 }
 
-export {
-  curry,
-};
+export { curry };
