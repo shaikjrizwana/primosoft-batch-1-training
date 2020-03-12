@@ -5,10 +5,12 @@ const clubMember = {
   memberStatus: 'Full',
 };
 
+clubMember.city = 'Nuzvid';
+
 const Sara = '{ "height":1.9, "age":36, "eyeColor":"brown"}';
 
 // use JSON.parse() to create an object 'objectSara':
-const objectSara = `${Sara} add code here`;
+const objectSara = JSON.parse(Sara);
 
 
 // var myArray = [];
@@ -27,11 +29,12 @@ const conference = {
   endDay: 'Wednesday',
 };
 
+
 // Take a look at the conference object listed in the code.
 // You can access the individual properties of the object as if they were elements
 // in an associative array: `conference['startDay']`
 // Add a line of code to store the name of the conference's end day in variable endDayIs.
-const endDay = conference;
+const { endDay } = conference;
 
 
 const Mike = {};
@@ -40,7 +43,7 @@ Mike.age = 36;
 Mike.eyecolor = 'brown';
 
 // serialize the object using JSON.stringify():
-const mikeStringified = Sara;
+const mikeStringified = JSON.stringify(Sara);
 
 export {
   clubMember,
