@@ -1,6 +1,6 @@
 
-function tripleAndFilter(...args) {
-  return args;
+function tripleAndFilter(array) {
+  return array.map((val) => val * 3).filter((val) => val % 5 === 0);
 }
 
 export {
