@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { sumEvenArgs } from './sumEvenArgs';
 
 describe('sumEvenArgs', () => {
