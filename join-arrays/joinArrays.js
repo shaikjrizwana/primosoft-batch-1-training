@@ -1,4 +1,3 @@
-
 function joinArrays(...args) {
   return args.reduce((result, array) => {
     for (const i in array) {
