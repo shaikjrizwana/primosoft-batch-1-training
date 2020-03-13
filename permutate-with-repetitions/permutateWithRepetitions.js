@@ -1,8 +1,23 @@
-
-function permutateWithRepetitions(...args) {
-  return args;
+function permutateWithRepetitions(charArray) {
+   return generatePermutations(charArray, charArray.length);
 }
 
-export {
-  permutateWithRepetitions,
-};
+function generatePermutations(charArray, permutationLength) {
+  if (permutationLength === 1) {
+    return charArray.map((char) => [char]);
+  }
+  const permutations = [];
+
+  const smallPermutations = generatePermutations(
+    charArray,
+    permutationLength - 1,
+  );
+
+  charArray.forEach((char) => {
+    smallPermutations.forEach((smallPermutation) => {
+      permutations.push([char].concat(smallPermutation));
+    });
+  });
+  return permutations;
+}
+export { permutateWithRepetitions };
