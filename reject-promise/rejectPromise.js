@@ -1,6 +1,9 @@
 
-function rejectPromise(...args) {
-  return args;
+function rejectPromise() {
+  const promise = new Promise((resolves) => {
+    resolves('REJECTED!');
+  });
+  return promise;
 }
 
 export {
