@@ -1,8 +1,20 @@
+function simpleIterable() {
+  const simpleIterator = {
+    [Symbol.iterator]() {
+      let val = 0;
+      return {
+        next() {
+          if (val < 5) {
+            val += 1;
+            return { value: val, done: false };
+          }
 
-function simpleIterable(...args) {
-  return args;
+          return { value: undefined, done: true };
+        },
+      };
+    },
+  };
+  return simpleIterator;
 }
 
-export {
-  simpleIterable,
-};
+export { simpleIterable };
