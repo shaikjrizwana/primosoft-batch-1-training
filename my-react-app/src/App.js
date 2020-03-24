@@ -3,12 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const value = "Equal";
-  const value1 = "Not Equal";
+  const list = ['x','y','z'];
   return (
     <div className="App">
       <h1>
-      {(4 === 1+2) ? value : value1}
+        {
+          list.map(item => {
+            return <div>{item}</div>
+          })
+        }
       </h1>
     </div>
   );
