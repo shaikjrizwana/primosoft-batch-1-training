@@ -3,10 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const value = "Equal";
+  const value1 = "Not Equal";
   return (
     <div className="App">
-      <h1>Learning React</h1>
-      <h1>My first React app</h1>
+      <h1>
+      {(4 === 1+2) ? value : value1}
+      </h1>
     </div>
   );
 }
