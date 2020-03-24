@@ -1,33 +1,24 @@
 import React, { Component } from "react";
 import "./App.css";
 
-class App extends Component {
-  onChange(event) {
-    console.log(event.target.value);
+class App extends Component{
+  constructor(props){
+    super(props);
+    this.onSubmit=this.onSubmit.bind(this)
   }
-  onSubmit(event) {
+  onSubmit(event){
+    event.preventDefault();
     alert("submitted");
   }
-  render() {
-    const fruits = ["apple", "orange", "mango"];
-    return (
+  render(){
+    return(
       <div className="App">
-        <h1>Displaying list of fruits</h1>
-        <h2>
-          {fruits.map(fruit => {
-            return (
-              <div key={fruit} onMouseOver={this.onMouseOver}>
-                {" "}
-                {fruit}
-              </div>
-            );
-          })}
-        </h2>
+        <h1>constructor and binding methods</h1>
         <form onSubmit={this.onSubmit}>
-          <input onChange={this.onChange}></input>
+          <input/>
         </form>
       </div>
-    );
+    )
   }
 }
 
