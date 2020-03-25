@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-class MyComponent extends Component{
-  render(){
-    return(
-      <div className="Component">
-          <h1>This is  a newly created component.</h1>
-          <h1> and it is imported into another component.</h1>
-      </div>
-    )
-  }
+class MyComponent extends Component {
+    render() {
+        const { title, name, onClick } = this.props;
+        return (
+            <div className="Component">
+                <h1>{title}</h1>
+                <h2>{name}</h2>
+                <button onClick={onClick}>click to change title!</button>
+            </div>
+        );
+    }
 }
 
 export default MyComponent;
