@@ -22,7 +22,6 @@ class App extends Component {
         <h1>{this.state.title}</h1>
         <MyComponent
           title="The is the newly created component title."
-          name="Mahendra"
           onClick={this.onClick}
         />
       </div>
