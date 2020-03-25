@@ -4,19 +4,22 @@ import "./App.css";
 class App extends Component{
   constructor(props){
     super(props);
-    this.onSubmit=this.onSubmit.bind(this)
+    this.onClick=this.onClick.bind(this)
+    this.state={
+      title:'App Title'
+    }
   }
-  onSubmit(event){
-    event.preventDefault();
-    console.log(this.input.value);
+ 
+  onClick(){
+    this.setState({
+      title: 'New App Title'
+    })
   }
   render(){
     return(
       <div className="App">
-        <h1>constructor and binding methods</h1>
-        <form onSubmit={this.onSubmit}>
-          <input  ref={input=>this.input=input}/>
-        </form>
+        <h1>{this.state.title}</h1>
+        <button onClick={this.onClick}> Click Me!</button>
       </div>
     )
   }
