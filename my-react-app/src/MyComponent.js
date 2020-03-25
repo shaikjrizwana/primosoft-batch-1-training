@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-const defaultProps={
-    name:'mahendra'
+const defaultProps = {
+    name: 'mahendra'
 }
 class MyComponent extends Component {
     render() {
@@ -15,6 +15,6 @@ class MyComponent extends Component {
     }
 }
 
-MyComponent.defaultProps=defaultProps;
+MyComponent.defaultProps = defaultProps;
 
 export default MyComponent;
