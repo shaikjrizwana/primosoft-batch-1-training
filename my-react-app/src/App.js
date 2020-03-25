@@ -2,15 +2,17 @@ import React, {Component} from 'react';
 import './App.css';
 
 class App extends Component{
+  constructor(props){
+    super(props);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
   onMouseOver(){
     alert("Mouse overed");
   }
-  onChange(input){
-    console.log(input.target.value);
-  }
-  onSubmit(input){
-    input.preventDefault();
-    alert('Submitted');
+
+  onSubmit(event){
+    event.preventDefault();
+    console.log(this.input.value);
   }
   render(){
     const list = ['x','y','z'];
@@ -26,7 +28,7 @@ class App extends Component{
             }
           </h1>
           <form onSubmit = {this.onSubmit}>
-            <input onChange = {this.onChange}/>
+            <input onChange = {this.onChange} ref = {input => this.input = input}/>
           </form>
           
       </div>
