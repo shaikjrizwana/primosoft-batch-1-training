@@ -7,21 +7,23 @@ class App extends Component {
     super(props);
     this.onClick = this.onClick.bind(this);
     this.state = {
-      title: "App Title"
+      title: "Initial Title",
+      name: "Initial name"
     };
   }
 
   onClick() {
     this.setState({
-      title: "New App Title"
+      name: "Updated name ",
+      title: "Updated title"
     });
   }
   render() {
     return (
       <div className="App">
-        <h1>{this.state.title}</h1>
         <MyComponent
-          title="The is the newly created component title."
+          name={this.state.name}
+          title={this.state.title}
           onClick={this.onClick}
         />
       </div>

@@ -9,7 +9,7 @@ class MyComponent extends Component {
             <div className="Component">
                 <h1>{title}</h1>
                 <h2>{name}</h2>
-                <button onClick={onClick}>click to change title!</button>
+                <button onClick={onClick}>click to update!</button>
             </div>
         );
     }
