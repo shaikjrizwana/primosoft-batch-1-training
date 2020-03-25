@@ -8,14 +8,14 @@ class App extends Component{
   }
   onSubmit(event){
     event.preventDefault();
-    alert("submitted");
+    console.log(this.input.value);
   }
   render(){
     return(
       <div className="App">
         <h1>constructor and binding methods</h1>
         <form onSubmit={this.onSubmit}>
-          <input/>
+          <input  ref={input=>this.input=input}/>
         </form>
       </div>
     )
