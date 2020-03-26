@@ -6,7 +6,9 @@ const propTypes = {
     title : PropTypes.any,
     onClicked : PropTypes.func
   };
-
+const defaultProps = {
+    name : 'Default property'
+};
 class MyComponent extends Component{
     
   render(){
