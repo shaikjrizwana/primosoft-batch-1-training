@@ -5,38 +5,24 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "mahendra",
-      checked: true
+      name: "Mahendra",
+      isLoggedIn: true
     }
-    this.updateName = this.updateName.bind(this);
-    this.updateCheck = this.updateCheck.bind(this);
+    this.renderName=this.renderName.bind(this)
+  }
+  renderName() {
+    if (!this.state.isLoggedIn) {
+      return <h1>Please Login!</h1>
+    }
+    return <h1>Welcome {this.state.name}</h1>
   }
 
-  updateName(event) {
-    this.setState({
-      name: event.target.value
-    })
-  }
-
-  updateCheck(event) {
-      this.setState({
-        checked: !this.state.checked
-      })
-  }
   render() {
     return (
       <div className="App">
-        <input
-          onChange={this.updateName}
-          value={this.state.name}
-        />
-        <div>
-          <input
-            type="checkbox"
-            onChange={this.updateCheck}
-            checked={this.state.checked}
-          />
-        </div>
+        {
+          this.renderName()
+        }
       </div>
     );
   }
