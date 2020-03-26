@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 
 
 class MyComponent extends Component{
-componentWillUpdate(nextProps, nextState){
-    console.log(this.props, this.state, this.nextProps, this.nextState);
+componentDidUpdate(prevProps, prevState){
+    console.log(this.props, this.state, this.prevProps, this.prevState);
 }
   render(){
     const {title, name, onClick} = this.props;
