@@ -1,16 +1,7 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 
-const propTypes = {
-    name : PropTypes.string.isRequired,
-    title : PropTypes.any,
-    onClicked : PropTypes.func
-  };
-const defaultProps = {
-    name : 'Default property'
-};
+
 class MyComponent extends Component{
-    
   render(){
     const {title, name, onClick} = this.props;
     return(
@@ -22,6 +13,5 @@ class MyComponent extends Component{
     )
   }
 }
-MyComponent.PropTypes = propTypes;
-MyComponent.defaultProps = defaultProps;
+
 export default MyComponent;

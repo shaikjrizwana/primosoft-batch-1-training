@@ -8,8 +8,8 @@ class App extends Component{
     super(props);
     this.onClick = this.onClick.bind(this);
     this.state = {
-      count : 0,
       title: 'App Title',
+      name : 'App Name',
     };
   }
   onMouseOver(){
@@ -22,7 +22,8 @@ class App extends Component{
   }
   onClick(){
     this.setState({
-      title : 'New App Title'
+      title : 'New App Title',
+      name : 'New App Name',
     }
     );
   }
@@ -33,8 +34,8 @@ class App extends Component{
           <h1>My first react app</h1>
           <h1>{this.state.title}</h1>
           <MyComponent 
-          title = "This is the new Component Title"
-          name = "2"
+          title = {this.state.title}
+          name = {this.state.name}
           onClick = {this.onClick}/>
       </div>
     )
