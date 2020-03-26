@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import MyComponent from './MyComponent';
 import './App.css';
 
+
 class App extends Component{
   constructor(props){
     super(props);
@@ -33,10 +34,11 @@ class App extends Component{
           <h1>{this.state.title}</h1>
           <MyComponent 
           title = "This is the new Component Title"
-          name = "Divya"
+          name = "2"
           onClick = {this.onClick}/>
       </div>
     )
   }
 }
+
 export default App;

@@ -1,4 +1,11 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+
+const propTypes = {
+    name : PropTypes.string.isRequired,
+    title : PropTypes.any,
+    onClicked : PropTypes.func
+  };
 
 class MyComponent extends Component{
     
@@ -13,4 +20,6 @@ class MyComponent extends Component{
     )
   }
 }
+MyComponent.PropTypes = propTypes;
+MyComponent.defaultProps = defaultProps;
 export default MyComponent;
