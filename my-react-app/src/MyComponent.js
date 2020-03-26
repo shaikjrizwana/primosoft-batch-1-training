@@ -6,14 +6,17 @@ const propTypes = {
     title: PropTypes.string.isRequired,
     onClick: PropTypes.func
 }
-const defaultProps={
+const defaultProps = {
     name: "Default name of App"
 }
 class MyComponent extends Component {
-    componentWillMount(){
+    componentWillMount() {
         console.log("component will mount");
     }
-    
+
+    componentDidMount() {
+        console.log("component did mount");
+    }
     render() {
         const { title, name, onClick } = this.props;
         return (
