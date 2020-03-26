@@ -10,8 +10,8 @@ const defaultProps = {
     name: "Default name of App"
 }
 class MyComponent extends Component {
-    componentDidUpdate(prevProps, prevState) {
-        console.log(this.props, this.state, prevProps, prevState)
+    shouldComponentUpdate(nextProps,nextState){
+        return false;
     }
     render() {
         const { title, name, onClick } = this.props;
