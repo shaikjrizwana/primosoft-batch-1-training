@@ -5,6 +5,9 @@ class App extends Component{
   constructor(props){
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
+    this.state = {
+      count : 0,
+    };
   }
   onMouseOver(){
     alert("Mouse overed");
@@ -13,6 +16,11 @@ class App extends Component{
   onSubmit(event){
     event.preventDefault();
     console.log(this.input.value);
+  }
+  updateCount(){
+    this.setState((prevstate, props) => {
+      return {count: prevstate.count + 1}
+    });
   }
   render(){
     const list = ['x','y','z'];
@@ -30,7 +38,7 @@ class App extends Component{
           <form onSubmit = {this.onSubmit}>
             <input onChange = {this.onChange} ref = {input => this.input = input}/>
           </form>
-          
+          <button onClick={() => this.updateCount()}>Clicked {this.state.count} times</button>
       </div>
     )
   }
