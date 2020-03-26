@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 
 
 class MyComponent extends Component{
+componentWillUpdate(nextProps, nextState){
+    console.log(this.props, this.state, this.nextProps, this.nextState);
+}
   render(){
     const {title, name, onClick} = this.props;
     return(
