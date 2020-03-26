@@ -4,20 +4,39 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.logName = this.logName.bind(this);
+    this.state = {
+      name: "mahendra",
+      checked: true
+    }
+    this.updateName = this.updateName.bind(this);
+    this.updateCheck = this.updateCheck.bind(this);
   }
 
-  logName() {
-    console.log(this.name.value)
+  updateName(event) {
+    this.setState({
+      name: event.target.value
+    })
+  }
+
+  updateCheck(event) {
+      this.setState({
+        checked: !this.state.checked
+      })
   }
   render() {
     return (
       <div className="App">
         <input
-          defaultValue="mahendra"
-          ref={input => this.name = input}
-          onChange={this.logName}
+          onChange={this.updateName}
+          value={this.state.name}
         />
+        <div>
+          <input
+            type="checkbox"
+            onChange={this.updateCheck}
+            checked={this.state.checked}
+          />
+        </div>
       </div>
     );
   }
