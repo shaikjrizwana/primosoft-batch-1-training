@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 
 class MyComponent extends Component{
+    
   render(){
+    const {title, name, onClick} = this.props;
     return(
       <div className="MyComponent" >
-          <h1>This is a new Component which can be dropped into another component</h1>
+          <h1>Title: {title}</h1>
+          <h1>Name: {name}</h1>
+          <button onClick = {onClick}>Click Here</button>
       </div>
     )
   }

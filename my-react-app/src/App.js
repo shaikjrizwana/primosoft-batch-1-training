@@ -5,7 +5,7 @@ import './App.css';
 class App extends Component{
   constructor(props){
     super(props);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.onClick = this.onClick.bind(this);
     this.state = {
       count : 0,
       title: 'App Title',
@@ -19,7 +19,7 @@ class App extends Component{
     event.preventDefault();
     console.log(this.input.value);
   }
-  updateCount(){
+  onClick(){
     this.setState({
       title : 'New App Title'
     }
@@ -31,7 +31,10 @@ class App extends Component{
           <h1>Learning React</h1>
           <h1>My first react app</h1>
           <h1>{this.state.title}</h1>
-          <MyComponent />
+          <MyComponent 
+          title = "This is the new Component Title"
+          name = "Divya"
+          onClick = {this.onClick}/>
       </div>
     )
   }
