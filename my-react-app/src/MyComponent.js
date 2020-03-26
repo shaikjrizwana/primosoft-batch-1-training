@@ -10,12 +10,8 @@ const defaultProps = {
     name: "Default name of App"
 }
 class MyComponent extends Component {
-    componentWillMount() {
-        console.log("component will mount");
-    }
-
-    componentDidMount() {
-        console.log("component did mount");
+    UNSAFE_componentWillUpdate(nextProps, nextState) {
+        console.log(this.props, this.state, nextProps, nextState)
     }
     render() {
         const { title, name, onClick } = this.props;

@@ -8,14 +8,14 @@ class App extends Component {
     this.onClick = this.onClick.bind(this);
     this.state = {
       title: "Initial Title",
-      name: "mahendra"
+      name: "Initial Name"
     };
   }
 
   onClick() {
     this.setState({
-      name: "Updated name ",
-      title: "Updated title"
+      name: "New App name ",
+      title: "New App title"
     });
   }
   render() {
