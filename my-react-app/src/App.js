@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import MyComponent from './MyComponent';
 import './App.css';
 
 class App extends Component{
@@ -7,6 +8,7 @@ class App extends Component{
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {
       count : 0,
+      title: 'App Title',
     };
   }
   onMouseOver(){
@@ -18,27 +20,18 @@ class App extends Component{
     console.log(this.input.value);
   }
   updateCount(){
-    this.setState((prevstate, props) => {
-      return {count: prevstate.count + 1}
-    });
+    this.setState({
+      title : 'New App Title'
+    }
+    );
   }
   render(){
-    const list = ['x','y','z'];
     return(
       <div className="App" >
           <h1>Learning React</h1>
           <h1>My first react app</h1>
-          <h1>
-            {
-              list.map(item => {
-                return <div key = {item} onMouseOver = {this.onMouseOver}>{item}</div>
-              })
-            }
-          </h1>
-          <form onSubmit = {this.onSubmit}>
-            <input onChange = {this.onChange} ref = {input => this.input = input}/>
-          </form>
-          <button onClick={() => this.updateCount()}>Clicked {this.state.count} times</button>
+          <h1>{this.state.title}</h1>
+          <MyComponent />
       </div>
     )
   }
