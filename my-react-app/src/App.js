@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import ProductItem from './ProductItem';
 const products = [
   {
     name : "Redmi",
@@ -12,19 +13,28 @@ const products = [
 ];
 localStorage.setItem('products',JSON.stringify(products));
 
+
 class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      products : []
+      products : JSON.parse(localStorage.getItem('products'))
     };
+    this.onDelete = this.onDelete.bind(this);
+  }
+  onDelete(name){
+    const products = this.getProducts();
+    const filteredProducts = products.filter(item=> {
+      return item.name !== name;
+    })
+    this.setState({products: filteredProducts});
   }
   componentWillMount(){
-    this.getProducts();
+    const products = this.getProducts()
+    this.setState({products});
   }
   getProducts(){
-    const products = JSON.parse(localStorage.getItem('products'));
-    this.setState({products});
+    return this.state.products;
   }
   render(){
     return(
@@ -33,9 +43,11 @@ class App extends Component{
         {
           this.state.products.map(product => {
             return(
-              <div key = {product.name}>
-                <span>{product.name}</span> : <span>{product.price}</span>
-              </div>
+             <ProductItem 
+             key = {product.name}
+             {...product}
+             onDelete = {this.onDelete}
+             />
             );
           })
         }
