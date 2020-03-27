@@ -2,15 +2,18 @@ import React, {Component} from 'react';
 import MyComponent from './MyComponent';
 import './App.css';
 
-
 class App extends Component{
   constructor(props){
     super(props);
-    this.onClick = this.onClick.bind(this);
+    this.updateName = this.updateName.bind(this);
     this.state = {
-      title: 'App Title',
       name : 'App Name',
     };
+  }
+  updateName(event){
+    this.setState({
+      name : event.target.value
+    });
   }
   onMouseOver(){
     alert("Mouse overed");
@@ -41,7 +44,10 @@ class App extends Component{
           title = {this.state.title}
           name = {this.state.name}
           onClick = {this.onClick}/>
-          <input defaultValue = "Divya"/>
+          <input 
+          value = {this.state.name}
+          onChange = {this.updateName}
+          />
       </div>
     )
   }
