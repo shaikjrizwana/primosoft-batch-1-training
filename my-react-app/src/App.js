@@ -15,7 +15,11 @@ class App extends Component{
   onMouseOver(){
     alert("Mouse overed");
   }
-
+  onChange(event){
+    this.setState({
+      name : event.target.value
+    });
+  }
   onSubmit(event){
     event.preventDefault();
     console.log(this.input.value);
@@ -37,6 +41,7 @@ class App extends Component{
           title = {this.state.title}
           name = {this.state.name}
           onClick = {this.onClick}/>
+          <input defaultValue = "Divya"/>
       </div>
     )
   }
