@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import ProductItem from './ProductItem'
+import AddProduct from './AddProduct'
 
 const products = [
   {
@@ -21,6 +22,7 @@ class App extends Component {
       products: JSON.parse(localStorage.getItem('products'))
     }
     this.onDelete = this.onDelete.bind(this);
+    this.onAdd = this.onAdd.bind(this)
   }
 
   UNSAFE_componentWillMount() {
@@ -41,10 +43,23 @@ class App extends Component {
     this.setState({ products: filteredProducts })
   }
 
+  onAdd(name, price) {
+    const products = this.getProducts()
+    products.push({
+      name,
+      price
+    })
+    this.setState({ products })
+
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Product Manager</h1>
+        <AddProduct
+          onAdd={this.onAdd}
+        />
         {
           this.state.products.map(product => {
             return (
