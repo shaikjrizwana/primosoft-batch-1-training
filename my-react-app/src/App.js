@@ -24,11 +24,23 @@ class App extends Component{
     };
     this.onDelete = this.onDelete.bind(this);
     this.onAdd = this.onAdd.bind(this);
+    this.onEditSubmit = this.onEditSubmit.bind(this);
   }
   onAdd(name, price){
     const products = this.getProducts();
     products.push({
       name,price
+    });
+    this.setState({products});
+  }
+  onEditSubmit(name, price, originalName){
+    let products = this.getProducts();
+    products = products.map(obj => {
+      if(obj.name === originalName){
+        obj.name = name;
+        obj.price = price;
+      }
+      return obj;
     });
     this.setState({products});
   }
@@ -60,6 +72,7 @@ class App extends Component{
              key = {product.name}
              {...product}
              onDelete = {this.onDelete}
+             onEditSubmit = {this.onEditSubmit}
              />
             );
           })
