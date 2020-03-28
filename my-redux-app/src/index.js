@@ -9,16 +9,19 @@ function producstReducer(state = [], action) {
   return state;
 }
 
-function usersReducer(state = '', action) {
+function userReducer(state = '', action) {
   return state;
 }
 
 const allReducers = combineReducers({
   products: producstReducer,
-  users: usersReducer
+  user: userReducer
 })
 
-const store = createStore(allReducers);
+const store = createStore(allReducers,{
+  products: [{name:'iphone'}],
+  user: 'Mahendra'
+});
 
 console.log(store.getState())
 
