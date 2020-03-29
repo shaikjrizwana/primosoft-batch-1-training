@@ -6,7 +6,10 @@ import * as serviceWorker from './serviceWorker';
 
 import {createStore} from 'redux';
 
-function reducer(){
+function reducer(state, action){
+  if(action.type === 'changeState'){
+    return action.payload.newState;
+  }
   return 'Current state';
 }
 const store = createStore(reducer);
@@ -21,6 +24,8 @@ const action = {
 };
 
 store.dispatch(action);
+console.log(store.getState());
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
