@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import {combineReducers, createStore} from 'redux';
 
 function ProductReducer(state = [], action){
-  return state;
+  return ['hii'];
 }
 
 function userReducer(state = '', action){
@@ -15,10 +15,13 @@ function userReducer(state = '', action){
 }
 const allReducers = combineReducers({
   products: ProductReducer,
-  users: userReducer
+  user: userReducer
 });
 
-const store = createStore(allReducers);
+const store = createStore(allReducers, {
+  products: [{name: 'iphone'}],
+  user: 'Divya'
+});
 
 console.log(store.getState());
 
