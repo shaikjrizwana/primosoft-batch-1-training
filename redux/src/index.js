@@ -12,6 +12,15 @@ function reducer(){
 const store = createStore(reducer);
 
 console.log(store.getState());
+
+const action = {
+  type: 'changeState',
+  payload: {
+    newState : 'New State'
+  }
+};
+
+store.dispatch(action);
 ReactDOM.render(
   <React.StrictMode>
     <App />
