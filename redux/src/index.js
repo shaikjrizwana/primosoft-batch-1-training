@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import {combineReducers, createStore} from 'redux';
+import { Provider } from 'react-redux';
 
 function ProductReducer(state = [], action){
   return ['hii'];
@@ -50,7 +51,8 @@ console.log(store.getState());
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store = {store}>
+    <App /></Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
