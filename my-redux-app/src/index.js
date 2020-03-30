@@ -5,19 +5,11 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { combineReducers, createStore } from "redux";
 import { Provider } from "react-redux";
+import producstReducer from "./reducers/products-reducer";
+import userReducer from "./reducers/user-reducer";
 
-function producstReducer(state = [], action) {
-  return state;
-}
 
-function userReducer(state = "", { type, payload }) {
-  switch (type) {
-    case "updateUser":
-      return payload;
-    default:
-  }
-  return state;
-}
+
 
 const allReducers = combineReducers({
   products: producstReducer,
