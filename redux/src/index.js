@@ -10,7 +10,11 @@ function ProductReducer(state = [], action){
   return ['hii'];
 }
 
-function userReducer(state = '', action){
+function userReducer(state = '', {type, payload}){
+  switch(type){
+    case 'updateuser':
+      return payload;
+  }
   return state;
 }
 const allReducers = combineReducers({
@@ -21,8 +25,16 @@ const allReducers = combineReducers({
 const store = createStore(allReducers, {
   products: [{name: 'iphone'}],
   user: 'Divya'
-});
+},
+window.devToolsExtension && window.devToolsExtension()
+);
 
+const updateUserAction = {
+  type : 'updateuser',
+  payload: {
+    user: 'john'
+  }
+}
 console.log(store.getState());
 
 const action = {
@@ -33,6 +45,7 @@ const action = {
 };
 
 store.dispatch(action);
+store.dispatch(updateUserAction);
 console.log(store.getState());
 
 ReactDOM.render(
