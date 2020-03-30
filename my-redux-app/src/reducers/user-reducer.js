@@ -3,6 +3,6 @@ export default function userReducer(state = "", { type, payload }) {
     case "updateUser":
       return payload;
     default:
+      return state;
   }
-  return state;
 }
