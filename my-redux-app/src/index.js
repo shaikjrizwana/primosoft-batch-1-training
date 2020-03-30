@@ -4,17 +4,17 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { combineReducers, createStore } from "redux";
+import { Provider } from "react-redux";
 
 function producstReducer(state = [], action) {
   return state;
 }
 
-function userReducer(state = "", {type,payload}) {
-  switch(type){
-    case 'updateUser':
+function userReducer(state = "", { type, payload }) {
+  switch (type) {
+    case "updateUser":
       return payload;
     default:
-      
   }
   return state;
 }
@@ -32,21 +32,11 @@ const store = createStore(
   },
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
-
-console.log(store.getState());
-
-const updateUserAction = {
-  type: "updateUser",
-  payload: {
-    user: "Vijay"
-  }
-};
-
-store.dispatch(updateUserAction);
-
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
