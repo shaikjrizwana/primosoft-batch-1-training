@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+
 import {combineReducers, createStore} from 'redux';
 import { Provider } from 'react-redux';
 import ProductReducer from './reducers/productReducer.js';
 import userReducer from './reducers/userReducer.js';
-import updateUserAction from './Actions/userAction.js';
+
 
 const allReducers = combineReducers({
   products: ProductReducer,
@@ -22,7 +23,7 @@ const store = createStore(allReducers, {
 window.devToolsExtension && window.devToolsExtension()
 );
 
-store.dispatch(updateUserAction);
+
 console.log(store.getState());
 
 ReactDOM.render(

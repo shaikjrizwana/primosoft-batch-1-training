@@ -1,7 +1,9 @@
+import { UPDATE_USER } from '../Actions/userAction.js';
+
 export default function userReducer(state = '', {type, payload}){
     switch(type){
-      case 'updateuser':
-        return payload;
+      case UPDATE_USER:
+        return payload.user;
       default:
         return state;
     }
