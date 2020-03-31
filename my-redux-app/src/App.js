@@ -13,7 +13,7 @@ class App extends Component {
     this.props.onUpdateUser(event.target.value)
   }
   render() {
-   // console.log(this.props);
+    // console.log(this.props);
     return (
       <div className="App">
         <header className="App-header">
@@ -45,10 +45,14 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapActionsToProps = (disptach, props) => {
-  console.log(props)
   return bindActionCreators({
     onUpdateUser: updateUser
   }, disptach);
 };
 
-export default connect(mapStateToProps, mapActionsToProps)(App);
+const mergeProps = (propsFromState, propsFromDispatch, ownProps) => {
+  console.log(propsFromState, propsFromDispatch, ownProps);
+  return {}
+}
+
+export default connect(mapStateToProps, mapActionsToProps, mergeProps)(App);
