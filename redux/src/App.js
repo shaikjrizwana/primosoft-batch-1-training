@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
 import {updateUser} from './Actions/userAction.js';
+import { bindActionCreators } from 'redux';
 
 class App extends Component{
   constructor(props){
@@ -31,6 +32,7 @@ class App extends Component{
         </a>
       </header>
       <input onChange = {this.onUpdateUser} />
+      {this.props.user}
     </div>
   );
 }
@@ -44,8 +46,12 @@ const mapStateToProps = (state, ownprops) => {
   }
 };
 
-const mapActionsToProps = {
-  onUpdateUser: updateUser
+const mapActionsToProps = (dispatch, props) => {
+  console.log(props)
+  return bindActionCreators({
+    onUpdateUser: updateUser
+  },dispatch);
+  
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(App);
