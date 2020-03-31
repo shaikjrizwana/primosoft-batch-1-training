@@ -3,16 +3,13 @@ import logo from "./logo.svg";
 import "./App.css";
 import { connect } from "react-redux";
 import { updateUser, apiRequest } from "./actions/user-actions";
+import { createSelector } from "reselect";
 class App extends Component {
   constructor(props) {
     super(props);
     this.onUpdateUser = this.onUpdateUser.bind(this);
   }
-  componentDidMount() {
-    setTimeout(() => {
-      this.props.onApiRequest();
-    }, 1500);
-  }
+
   onUpdateUser(event) {
     this.props.onUpdateUser(event.target.value);
   }
@@ -40,13 +37,23 @@ class App extends Component {
     );
   }
 }
-const mapStateToProps = (state, ownProps) => {
-  return {
-    products: state.products,
-    user: state.user,
-    userPlusProps: `${state.user} ${ownProps.randomProps}`
-  };
-};
+const productsSelector = createSelector(
+  state => state.products,
+  products => products
+);
+
+const userSelector = createSelector(
+  state => state.user,
+  user => user
+);
+const mapStateToProps = createSelector(
+  productsSelector,
+  userSelector,
+  (products, user) => ({
+    products,
+    user
+  })
+);
 
 const mapActionsToProps = {
   onUpdateUser: updateUser,
