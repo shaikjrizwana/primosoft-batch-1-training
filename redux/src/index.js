@@ -24,12 +24,10 @@ window.devToolsExtension && window.devToolsExtension()
 );
 
 
-console.log(store.getState());
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store = {store}>
-    <App /></Provider>
+    <App props = "property"/></Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

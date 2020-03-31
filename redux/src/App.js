@@ -13,6 +13,7 @@ class App extends Component{
     this.props.onUpdateUser(event.target.value);
   }
   render(){
+  console.log(this.props)
   return (
     <div className="App">
       <header className="App-header">
@@ -35,10 +36,13 @@ class App extends Component{
 }
 }
   
-const mapStateToProps = state => ({
-  products: state.products,
-  user: state.user
-});
+const mapStateToProps = (state, ownprops) => {
+  return {
+    products: state.products,
+    user: state.user,
+    userPlusProps: `${state.user} ${ownprops.props}`
+  }
+};
 
 const mapActionsToProps = {
   onUpdateUser: updateUser
