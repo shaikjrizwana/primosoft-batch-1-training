@@ -51,7 +51,11 @@ const mapActionsToProps = (dispatch, props) => {
   return bindActionCreators({
     onUpdateUser: updateUser
   },dispatch);
-  
 };
 
-export default connect(mapStateToProps, mapActionsToProps)(App);
+const mergeProps = (propsFromState, propsFromDispatch, ownProps) => {
+  console.log(propsFromState, propsFromDispatch, ownProps)
+  return {};
+}
+
+export default connect(mapStateToProps, mapActionsToProps, mergeProps)(App);
