@@ -2,18 +2,22 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { connect } from "react-redux";
-import { updateUser } from "./actions/user-actions"
-import { bindActionCreators } from "redux";
+import { updateUser, apiRequest } from "./actions/user-actions";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.onUpdateUser = this.onUpdateUser.bind(this)
+    this.onUpdateUser = this.onUpdateUser.bind(this);
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.props.onApiRequest();
+    }, 1500);
   }
   onUpdateUser(event) {
-    this.props.onUpdateUser(event.target.value)
+    this.props.onUpdateUser(event.target.value);
   }
+
   render() {
-    // console.log(this.props);
     return (
       <div className="App">
         <header className="App-header">
@@ -41,18 +45,12 @@ const mapStateToProps = (state, ownProps) => {
     products: state.products,
     user: state.user,
     userPlusProps: `${state.user} ${ownProps.randomProps}`
-  }
+  };
 };
 
-const mapActionsToProps = (disptach, props) => {
-  return bindActionCreators({
-    onUpdateUser: updateUser
-  }, disptach);
+const mapActionsToProps = {
+  onUpdateUser: updateUser,
+  onApiRequest: apiRequest
 };
 
-const mergeProps = (propsFromState, propsFromDispatch, ownProps) => {
-  console.log(propsFromState, propsFromDispatch, ownProps);
-  return {}
-}
-
-export default connect(mapStateToProps, mapActionsToProps, mergeProps)(App);
+export default connect(mapStateToProps, mapActionsToProps)(App);

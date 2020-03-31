@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "redux-thunk": "^2.3.0"
+  }
+}
