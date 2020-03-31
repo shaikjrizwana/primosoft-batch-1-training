@@ -26,7 +26,7 @@ const store = createStore(
 );
 ReactDOM.render(
     <Provider store={store}>
-      <App />
+      <App  randomProps="something"/>
     </Provider>,
   document.getElementById("root")
 );

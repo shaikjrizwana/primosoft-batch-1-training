@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { connect } from "react-redux";
-import {updateUser} from "./actions/user-actions"
+import { updateUser } from "./actions/user-actions"
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.onUpdateUser = this.onUpdateUser.bind(this)
   }
-  onUpdateUser(event){
+  onUpdateUser(event) {
     this.props.onUpdateUser(event.target.value)
   }
   render() {
@@ -29,19 +29,22 @@ class App extends Component {
             Learn React
           </a>
         </header>
-        <input  type="text" onChange = {this.onUpdateUser}/>
+        <input type="text" onChange={this.onUpdateUser} />
         {this.props.user}
       </div>
     );
   }
 }
-const mapStateToProps = state =>({
-products: state.products,
-user: state.user
-})
+const mapStateToProps = (state, ownProps) => {
+  return {
+    products: state.products,
+    user: state.user,
+    userPlusProps: `${state.user} ${ownProps.randomProps}`
+  }
+};
 
-const mapActionsToProps ={
+const mapActionsToProps = {
   onUpdateUser: updateUser
 };
 
-export default connect(mapStateToProps , mapActionsToProps)(App);
+export default connect(mapStateToProps, mapActionsToProps)(App);
