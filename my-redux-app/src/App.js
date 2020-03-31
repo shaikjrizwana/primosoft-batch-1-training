@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { connect } from "react-redux";
 import { updateUser } from "./actions/user-actions"
+import { bindActionCreators } from "redux";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +13,7 @@ class App extends Component {
     this.props.onUpdateUser(event.target.value)
   }
   render() {
-    console.log(this.props);
+   // console.log(this.props);
     return (
       <div className="App">
         <header className="App-header">
@@ -43,8 +44,11 @@ const mapStateToProps = (state, ownProps) => {
   }
 };
 
-const mapActionsToProps = {
-  onUpdateUser: updateUser
+const mapActionsToProps = (disptach, props) => {
+  console.log(props)
+  return bindActionCreators({
+    onUpdateUser: updateUser
+  }, disptach);
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(App);
