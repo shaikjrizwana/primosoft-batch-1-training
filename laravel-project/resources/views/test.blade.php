@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
 <body>
-    <div>Hello World!</div>
+    <div>{{$name}}</div>
 </body>
 </html>
