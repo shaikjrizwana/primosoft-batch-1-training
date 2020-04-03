@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
 <body>
-    <div>{{$name}}</div>
+    <div>{{$post}}</div>
 </body>
 </html>
