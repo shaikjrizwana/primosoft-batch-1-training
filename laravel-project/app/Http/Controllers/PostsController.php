@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use DB;
+use App\Posts;
 class PostsController{
     public function show($slug){
-        $post = \DB::table('posts')->where('slug', $slug)->first();
-       
+        $post = Posts::where('slug', $slug)->firstOrfail();
+    
         return view('test',['post' => $post]);
         
         
